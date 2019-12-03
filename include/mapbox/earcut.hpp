@@ -232,6 +232,7 @@ Earcut<N>::filterPoints(Node* start, Node* end) {
     bool again;
     do {
         again = false;
+        if (!(p && p->next)) break;
 
         if (!p->steiner && (equals(p, p->next) || area(p->prev, p, p->next) == 0)) {
             removeNode(p);
